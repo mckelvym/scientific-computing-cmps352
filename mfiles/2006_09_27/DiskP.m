@@ -1,0 +1,24 @@
+function DiskP(p)
+
+t = linspace(0,2*pi, 100); %create linespace
+x = cos(t);
+y = sin(t);
+
+A = rand(2,2);
+u = A*[x;y];
+x1 = u(1, :);
+y1 = u(2, :);
+plot(x1,y1);
+
+
+
+%x = x.^2;
+%y = y.^2;
+
+%x = x.^(1/p);
+%y = y.^(1/p);
+
+%plot(x,y,'b',-x,y,'b',-x,-y,'b',x,-y,'b'); %plot D_p
+
+axis('equal'); %set equal scale on axis
+title('Unit disk D_p');
