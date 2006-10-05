@@ -1,0 +1,26 @@
+function quiz2;
+
+
+sprintf('Here are the answers for quiz2:\nSuppose L1 looks like this:')
+L1 = eye(4);
+for i = 2:4
+    L1(i,1) = round(rand()*10);
+end    
+L1
+sprintf('We can see that the inverse of L1 will have the nondiagonal terms negated:')
+inv(L1)
+sprintf('Watch for a similar thing in L2 and L3:')
+L2 = eye(4);
+for i = 3:4
+    L2(i,2) = round(rand()*10);
+end    
+L2
+sprintf('Inverse of L2:')
+inv(L2)
+L3 = eye(4);
+L3(i,3) = round(rand()*10);
+L3
+sprintf('Inverse of L3:')
+inv(L3)
+sprintf('Thus, it is easy to see that to obtain any inv(L_i) that we just negate the nondiagonal terms in the corresponding L_i matrix')
+sprintf('For part2\nThe algorithm does not need any extra space because once the diagonal has entries of 1, we can simply find the inverse easily by observing what happened in the previous problem:\nWe simply negate 

@@ -1,0 +1,106 @@
+quiz2
+
+ans =
+
+Mark McKelvy
+CMPS352
+October 5, 2006
+Quiz 2
+
+
+ans =
+
+Here are the answers for quiz2:
+Suppose L1 looks like this:
+
+
+L1 =
+
+     1     0     0     0
+     8     1     0     0
+     9     0     1     0
+     5     0     0     1
+
+
+ans =
+
+We can see that the inverse of L1 
+will have the terms below the diagonal 
+in the corresponding column negated:
+
+
+ans =
+
+    1.0000         0         0         0
+   -8.0000    1.0000         0         0
+   -9.0000         0    1.0000   -0.0000
+   -5.0000         0    0.0000    1.0000
+
+
+ans =
+
+Watch for a similar thing in L2 and L3:
+
+
+L2 =
+
+     1     0     0     0
+     0     1     0     0
+     0     9     1     0
+     0     2     0     1
+
+
+ans =
+
+Inverse of L2:
+
+
+ans =
+
+     1     0     0     0
+     0     1     0     0
+     0    -9     1     0
+     0    -2     0     1
+
+
+L3 =
+
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0     2     1
+
+
+ans =
+
+Inverse of L3:
+
+
+ans =
+
+     1     0     0     0
+     0     1     0     0
+     0     0     1     0
+     0     0    -2     1
+
+
+ans =
+
+Thus, it is easy to see that to obtain any 
+inv(L_i) that we just negate the nondiagonal 
+terms in the corresponding L_i matrix
+
+
+ans =
+
+For part2
+The algorithm does not need any extra space 
+because once the diagonal has entries of 1, 
+we can simply find the inverse easily by observing 
+what happened in the previous problem:
+We simply negate the terms in the 
+corresponding column that are below the 
+diagonal in order to find the inverse, 
+no extra space is needed.
+
+diary off
