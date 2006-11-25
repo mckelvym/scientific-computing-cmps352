@@ -1,0 +1,5 @@
+function k = modMul(a, b, n)
+% This is a function for modular arithmetic that multiplies a and b and if neeif needed
+% "wraps" the result around (where n is a bound) and returns the result
+k = mod(a+b, n);
+

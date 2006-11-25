@@ -1,0 +1,17 @@
+function X = caesar(x, key, dec)
+%implements a caesar cipher
+%x is the string to encrypt/decrypt
+%key is any value
+%dec is the flag to decrypt (pass '1'), any other value encrypts
+
+
+%make sure they key is within acceptable range
+key = mod(key, 96)
+
+%convert to integer representation, base at 0
+if(dec==1)
+    X = real(x-32) + key;
+else
+    X = real(x-32) - key;
+   
+

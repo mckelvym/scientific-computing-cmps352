@@ -1,0 +1,6 @@
+function [ output_args ] = proj( input_string )
+%proj Summary of this function goes here
+%   Detailed explanation goes here
+
+chararray = double(input_string)
+

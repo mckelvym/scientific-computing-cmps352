@@ -1,0 +1,47 @@
+function y = mycrypto(x, p, A)
+% MYCRYPTO Cryptography example from Moler's crypto.m
+% A is an encrypting matrix that you can use
+
+% Use a two-character Hill cipher with arithmetic modulo 97, a prime.
+% p = 97;
+
+% Choose two characters above ASCII 128 to expand set from 95 to 97.
+c1 = char(169); %copyright
+c2 = char(174); %registered
+
+%what does this do?
+%this checks each character in the string array and if it is one of the
+%characters we have chosen for our hill cipher, then it replaces it with a
+%different character that "doesn't really matter" as much
+x(x==c1) = 127;
+x(x==c2) = 128;
+
+% Convert to integers mod p.
+% real() takes a character string and returns the vector of numbers that
+% represent the ascii version of each character
+% the x-32 part is resetting the value of the characters since char(32) is
+% the first printable character
+% we want to mod the integers so that they are within the character range
+% that we want.
+x = mod(real(x-32),p);
+
+% Reshape into a matrix with 2 rows and floor(length(x)/2) columns.
+n = 2*floor(length(x)/2);
+X = reshape(x(1:n),2,n/2);
+
+% Encode with matrix multiplication modulo p.
+% A = [71 2; 2 26];
+Y = modMult(A,X,p);
+
+% Reshape into a single row.
+y = reshape(Y,1,n);
+
+% If length(x) is odd, encode the last character. 
+if length(x) > n
+   y(n+1) = modMult(p-1, x(n+1), p);
+end
+
+% Convert to ASCII characters.
+y = char(y+32);
+y(y==127) = c1;
+y(y==128) = c2;
